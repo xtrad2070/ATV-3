@@ -1,0 +1,327 @@
+
+/* CONFIGURAÇÕES GERAIS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #222;
+}
+
+/* CABEÇALHO - FLEXBOX */
+
+.cabecalho {
+    background-color: #151515;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 8%;
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #ff6b00;
+}
+
+.menu {
+    display: flex;
+    gap: 25px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #ff6b00;
+}
+
+/* BANNER */
+
+.banner {
+    min-height: 350px;
+
+    background: linear-gradient(
+        90deg,
+        #151515,
+        #444
+    );
+
+    display: flex;
+    align-items: center;
+
+    padding: 50px 10%;
+    color: white;
+
+    animation: aparecer 1s ease;
+}
+
+.banner-texto {
+    max-width: 550px;
+}
+
+.banner h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.banner p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.botao {
+    display: inline-block;
+
+    background-color: #ff6b00;
+    color: white;
+
+    padding: 13px 25px;
+    border-radius: 5px;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.botao:hover {
+    background-color: #d95700;
+    transform: scale(1.05);
+}
+
+/* PRODUTOS - GRID */
+
+.produtos {
+    padding: 60px 8%;
+    text-align: center;
+}
+
+.produtos h2,
+.sobre h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    color: #666;
+    margin-bottom: 35px;
+}
+
+/* GRADE COM 3 COLUNAS */
+
+.grade-produtos {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+/* CARDS */
+
+.card {
+    background-color: white;
+
+    padding: 20px;
+    border-radius: 10px;
+
+    position: relative;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.10);
+
+    transition: 0.3s;
+}
+
+/* HOVER DOS CARDS */
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.20);
+}
+
+.card img {
+    width: 100%;
+    height: 190px;
+
+    object-fit: contain;
+
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    min-height: 65px;
+}
+
+.card strong {
+    display: block;
+    color: #ff6b00;
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+/* BOTÃO DO CARD */
+
+.botao-card {
+    display: block;
+
+    background-color: #151515;
+    color: white;
+
+    padding: 12px;
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.botao-card:hover {
+    background-color: #ff6b00;
+}
+
+/* ETIQUETA - POSITION */
+
+.etiqueta {
+    position: absolute;
+
+    top: 12px;
+    left: 12px;
+
+    background-color: #ff6b00;
+    color: white;
+
+    padding: 6px 10px;
+    border-radius: 4px;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* SOBRE */
+
+.sobre {
+    background-color: #e5e5e5;
+
+    padding: 50px 10%;
+
+    text-align: center;
+}
+
+.sobre p {
+    max-width: 700px;
+    margin: 15px auto;
+
+    line-height: 1.7;
+}
+
+/* RODAPÉ */
+
+footer {
+    background-color: #151515;
+    color: white;
+
+    text-align: center;
+    padding: 30px;
+
+    line-height: 2;
+}
+
+/* ANIMAÇÃO */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    .grade-produtos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .banner h1 {
+        font-size: 34px;
+    }
+
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    .cabecalho {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .banner {
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+    .banner h1 {
+        font-size: 28px;
+    }
+
+    .grade-produtos {
+        grid-template-columns: 1fr;
+    }
+
+    .produtos {
+        padding: 40px 20px;
+    }
+
+}
+.card img {
+    width: 100%;
+    height: 190px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
